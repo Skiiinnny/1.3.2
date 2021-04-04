@@ -1,0 +1,23 @@
+body{
+    background-color: orange;
+    color: gainsboro;
+}
+
+.row{
+    height: auto;
+    background-color: #303841;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+.footer{
+
+    text-align: center;
+}
+img:hover{
+    background-color: gray;
+    opacity: 0.5;
+}
+.nav-link:hover{
+    background-color:#303841;
+    opacity: 0.5;
+}
