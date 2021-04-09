@@ -1,11 +1,12 @@
 body{
     background-color: orange;
     color: gainsboro;
+    background-attachment: fixed;
 }
 
 .row{
-    height: auto;
-    
+    height: max-content;
+
     margin-right: 5%;
     margin-left: 5%;
 }
