@@ -22,4 +22,5 @@ img:hover{
 .nav-link:hover{
     background-color:#303841;
     opacity: 0.5;
+    border-radius: 5px;
 }
