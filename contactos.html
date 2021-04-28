@@ -44,22 +44,22 @@
             </nav>
         </div>
         <div class="row bg-dark  px-4">
-            <form>
+            <form action="http://www.colex.cl/duoc/cargaData.php" method="POST">
                 <div class="col-md-6">
                     <label for="inputEmail4" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="inputEmail4">
+                    <input type="text" name="correo" class="form-control" id="inputEmail4" required>
                 </div>
                 <div class="col-md-6">
                     <label for="inputName4" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="inputName4">
+                    <input type="text" name="nombre" class="form-control" id="inputName4" required>
                 </div>
                 <div class="col-md-6">
                     <label for="inputPhone4" class="form-label">Numero de telefono</label>
-                    <input type="text" class="form-control" id="inputPhone4">
+                    <input type="text" name="telefono" class="form-control" id="inputPhone4">
                 </div>
                 <div class="col-md-6">
                     <label for="inputCity4" class="form-label">Ciudad de residencia</label>
-                    <input type="text" class="form-control" id="inputCity4">
+                    <input type="text" name="ciudad" class="form-control" id="inputCity4" required>
                 </div>
                 <div class="col-md-6">
                     <div class="form-check form-check-inline">
@@ -73,17 +73,19 @@
                         <label class="form-check-label" for="pasaportecheck">PASAPORTE</label>
                     </div>
 
-                    <input type="text" class="form-control" id="identificador">
+                    <input type="text" name="documento" class="form-control" id="identificador" required>
                 </div>
                 <div class="mb-3 ">
 
                     <label for="inputComentario4" class="form-label">Comentario</label>
-                    <textarea class="form-control" id="inputComentario4" rows="3"></textarea>
+                    <textarea class="form-control" name="comentario" id="inputComentario4" rows="3" required></textarea>
                 </div>
 
                 <div class="row">
                     <div class="col-10 ">
-                        <button type="submit" class="btn btn-primary "> Enviar
+
+                        <input type="hidden" id="url" name="url" value="google.cl" /><br />
+                        <button type="submit" class="btn btn-primary " value="Enviar"> Enviar
                         </button>
                     </div>
                     <div class="col-2">
