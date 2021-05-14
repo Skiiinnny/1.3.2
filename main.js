@@ -1,16 +1,21 @@
+var x = document.getElementById("geo");
 
-function capturarDatos (){
-    var campoRut = document.getElementById("identificador").value;
-    
-    return campoRut;
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "La localización no se pudo conseguir.";
+    }
+}
+
+function showPosition(position) {
+    var latitud = position.coords.latitude;
+    var longitud = position.coords.longitude;
+    var linkAPI = 'http://api.weatherapi.com/v1/current.json?key=261a3397a09c419cb67155250211405&q=';
+    var linkFinal = linkAPI + latitud + ',' +longitud;
+    jQuery.getJSON(linkFinal,
+    function (data) {
+        x.innerHTML= data.location.name+ ', '+data.location.country+': '+ data.current.temp_c + ' °C';
+    });
 
 }
-var datos =  capturarDatos();
-console.log(datos);
-// $("#formulario").submit(function () {  
-//     if($("#nombre").val().length < 1) {  
-//         alert("El nombre es obligatorio");  
-//         return false;  
-//     }  
-//     return false;  
-// });  
