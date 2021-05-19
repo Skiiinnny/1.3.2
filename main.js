@@ -15,8 +15,8 @@ function showPosition(position) {
     var linkFinal = linkAPI + latitud + ',' + longitud;
     jQuery.getJSON(linkFinal,
         function (data) {
-            // x.innerHTML= data.location.name+ ', '+data.location.country+': '+ data.current.temp_c + ' °C';
-            jQuery('#geo').html(data.location.name + ', ' + data.location.country + ': ' + data.current.temp_c + ' °C');
+
+            jQuery('#geo2').html(data.location.name + ', ' + data.location.country + ': ' + data.current.temp_c + ' °C');
 
         });
 
@@ -25,7 +25,7 @@ function showPosition(position) {
 jQuery(document).ready(function () {
     // getLocation();
 
-    jQuery('#btnClima').click(function(){
+    jQuery('#btnClima').click(function () {
         getLocation();
     });
 });
