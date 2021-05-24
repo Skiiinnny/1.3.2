@@ -1,11 +1,11 @@
 body{
     background-color: orange;
     color: gainsboro;
+    background-attachment: fixed;
 }
 
 .row{
-    height: auto;
-    
+    height: max-content;
     margin-right: 5%;
     margin-left: 5%;
 }
@@ -21,4 +21,8 @@ img:hover{
 .nav-link:hover{
     background-color:#303841;
     opacity: 0.5;
+    border-radius: 5px;
+}
+.ft{
+    font-size: medium;
 }
