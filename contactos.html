@@ -128,8 +128,9 @@
                             value="option2">
                         <label class="form-check-label" for="pasaportecheck">PASAPORTE</label>
                     </div>
-                    <input type="text" name="documento" class="form-control" placeholder="Identificador"
-                        id="identificador" required>
+                    <input type="text" id="rut" name="rut" required oninput="checkRut(this)" placeholder=""
+                    id="identificador" required>
+                    <script src="validar_rut.js"></script>
                 </div>
                 <div class="mb-3 ">
                     <label for="inputComentario4" class="form-label">Comentario</label>
