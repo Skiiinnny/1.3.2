@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -11,10 +11,43 @@
     <link rel="stylesheet" href="stylePlantilla.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
     <script src="dist/jquery.validate.min.js"></script>
-<!-- script de validacion -->
+    <!-- script de validacion -->
     <script>
+
+function checkRut(rut) {
+                    rut = String(rut);
+                    var valor = rut.replace(".", "").replace(".", "");
+                    valor = valor.replace("-", "");
+                    cuerpo = valor.slice(0, -1);
+                    dv = valor.slice(-1).toUpperCase();
+                    rut = cuerpo + "-" + dv;
+                    if (cuerpo.length < 7) {
+                        return false;
+                    }
+                    suma = 0;
+                    multiplo = 2;
+                    for (i = 1; i <= cuerpo.length; i++) {
+                        index = multiplo * valor.charAt(cuerpo.length - i);
+                        suma = suma + index;
+                        if (multiplo < 7) {
+                            multiplo = multiplo + 1;
+                        } else {
+                            multiplo = 2;
+                        }
+                    }
+                    dvEsperado = 11 - suma % 11;
+                    dv = dv == "K" ? 10 : dv;
+                    dv = dv == 0 ? 11 : dv;
+                    if (dvEsperado != dv) {
+                        return false;
+                    }
+                    return true;
+                }
         $(
             function () {
+                $.validator.addMethod("rut", function(value, element){
+                    return checkRut(value);
+                });
                 $("#sendbtn").on("click",
                     function () {
                         $("#form").validate(
@@ -24,8 +57,8 @@
                                     correo: { required: true },
                                     ciudad: { required: true },
                                     comentario: { required: true },
-                                    documento: {required: true}
-                
+                                    rut: { required: true, rut: true}
+
                                 },
                                 messages: {
                                     nombre: {
@@ -40,8 +73,9 @@
                                     comentario: {
                                         required: 'Ingrese su comentario'
                                     },
-                                    documento: {
-                                        required: 'Ingrese rut o numero de pasaporte valido'
+                                    rut: {
+                                        required: 'Ingrese rut o numero de pasaporte valido',
+                                        rut: 'Rut no validado'
                                     }
 
                                 }
@@ -73,8 +107,8 @@
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse position-relative" id="navbarNav" >
-                        <ul class="navbar-nav " >
+                    <div class="collapse navbar-collapse position-relative" id="navbarNav">
+                        <ul class="navbar-nav ">
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
                             </li>
@@ -91,7 +125,8 @@
                                 <a class="nav-link active" aria-current="page" href="contactos.html">Contactos</a>
                             </li>
                             <li id="geo2" class="position-absolute top-50 start-100 translate-middle pe-5">
-                                <button  id="btnClima" type="button" class="btn btn-warning "  onclick="getLocation()">Clima</button>
+                                <button id="btnClima" type="button" class="btn btn-warning "
+                                    onclick="getLocation()">Clima</button>
                             </li>
                         </ul>
                     </div>
@@ -117,6 +152,8 @@
                 <div class="col-md-6 pb-4">
                     <input type="text" name="ciudad" class="form-control" id="inputCity4" placeholder="Ciudad" required>
                 </div>
+
+
                 <div class="col-md-6 pb-4">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rutcheck"
@@ -128,10 +165,10 @@
                             value="option2">
                         <label class="form-check-label" for="pasaportecheck">PASAPORTE</label>
                     </div>
-                    <input type="text" id="rut" name="rut" required oninput="checkRut(this)" placeholder=""
-                    id="identificador" required>
-                    <script src="validar_rut.js"></script>
+                    <input type="text" id="rut" class="form-control" name="rut" required>
                 </div>
+
+
                 <div class="mb-3 ">
                     <label for="inputComentario4" class="form-label">Comentario</label>
                     <textarea class="form-control" name="comentario" id="inputComentario4" rows="3" required></textarea>
@@ -189,8 +226,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
         crossorigin="anonymous"></script>
-        <script src="main.js">
-        </script>
+    <script src="main.js">
+    </script>
 
 </body>
 
