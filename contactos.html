@@ -23,7 +23,9 @@
                                     nombre: { required: true },
                                     correo: { required: true },
                                     ciudad: { required: true },
-                                    comentario: { required: true }
+                                    comentario: { required: true },
+                                    documento: {required: true}
+                
                                 },
                                 messages: {
                                     nombre: {
@@ -37,7 +39,11 @@
                                     },
                                     comentario: {
                                         required: 'Ingrese su comentario'
+                                    },
+                                    documento: {
+                                        required: 'Ingrese rut o numero de pasaporte valido'
                                     }
+
                                 }
                             }
 
