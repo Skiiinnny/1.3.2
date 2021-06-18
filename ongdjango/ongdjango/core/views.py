@@ -1,4 +1,4 @@
-from core.forms import AnimalForm
+from .forms import AnimalForm
 from django.shortcuts import render
 from .models import Animal
 
