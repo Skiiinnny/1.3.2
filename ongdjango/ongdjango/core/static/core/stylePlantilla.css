@@ -1,0 +1,84 @@
+
+body{
+    background-color: orange;
+    color: gainsboro;
+    background-attachment: fixed;
+}
+
+.row{
+    height: max-content;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+.footer{
+
+    text-align: center;
+}
+img:hover{
+    background-color: gray;
+    opacity: 0.5;
+    visibility:visible;
+}
+.nav-link:hover{
+    background-color:#303841;
+    opacity: 0.5;
+    border-radius: 5px;
+}
+.ft{
+    font-size: medium;
+}
+.get-in-touch {
+    max-width: 800px;
+    margin: 50px auto;
+    position: relative;
+
+}
+
+.contact-form .form-field {
+    position: relative;
+    margin: 32px 0;
+}
+
+.contact-form .input-text {
+    display: block;
+    width: 100%;
+    height: 36px;
+    border-width: 0 0 2px 0;
+    border-color: #5543ca;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+}
+
+.contact-form .input-text:focus {
+    outline: none;
+}
+
+.contact-form .label {
+    position: absolute;
+    left: 20px;
+    bottom: 11px;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #5543ca;
+    cursor: text;
+    transition: -webkit-transform .2s ease-in-out;
+    transition: transform .2s ease-in-out;
+    transition: transform .2s ease-in-out, 
+    -webkit-transform .2s ease-in-out;
+}
+
+.contact-form .submit-btn {
+    display: inline-block;
+    background-color: #000;
+    background-image: linear-gradient(125deg,#a72879,#064497);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 16px;
+    padding: 8px 16px;
+    border: none;
+    width:200px;
+    cursor: pointer;
+}
