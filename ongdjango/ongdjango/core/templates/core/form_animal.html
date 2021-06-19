@@ -44,7 +44,7 @@
                                     href="{% url 'contactos'  %}">Contactos</a>
                             </li>
                             <li id="geo2" class="position-absolute top-50 start-100 translate-middle pe-5">
-                                <button id="btnClima" type="button" class="btn btn-warning"
+                                <button id="btnClima" type="button" class="btn btn-warning mb-2"
                                     onclick="getLocation()">Clima</button>
                             </li>
                         </ul>
@@ -61,10 +61,10 @@
                 <div class="form-group"></div>
                 {{ form.as_table }}
                 <div class="form-field col-lg-12">
-                    <input class="submit-btn" type="submit" value="Enviar">
+                    <input class="btn-warning btn" type="submit" value="Enviar">
                 </div>
             </form>
-            <div class="alert alert-succes" role="alert">{{mensaje}} </div>
+            <div class="alert alert-succes " role="alert">{{mensaje}} </div>
         </section>
     </div>
 
