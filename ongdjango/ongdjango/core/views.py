@@ -36,7 +36,7 @@ def contactos(request):
 
 
 def gatos(request):
-    animal = Animal.objects.all()
+    animal = Animal.objects.all().filter(especie=1)
     datos = {
         'animal': animal
     }
@@ -48,7 +48,7 @@ def nosotros(request):
 
 
 def perros(request):
-    animal = Animal.objects.all()
+    animal = Animal.objects.all().filter(especie=2)
     datos = {
         'animal': animal
     }
@@ -56,3 +56,9 @@ def perros(request):
 def plantilapersonal(request):
     return render(request, 'core/plantillaperosnal.html')
 
+def form_mod_animal(request, id):
+    animal = Animal.objects.get(numChip=id)
+    datos = {
+        'form' : AnimalForm(instance=animal)
+    }
+    return render (request, 'core/form_mod_animal.html', datos)

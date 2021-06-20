@@ -11,7 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
     <link rel="stylesheet" href="{% static 'core/stylePlantilla.css'%}">
 
-    <title>Formulario para añadir</title>
+    <title>Formulario de modificación</title>
 </head>
 
 <body class="container-fluid ">
@@ -61,7 +61,7 @@
                 <div class="form-group"></div>
                 {{ form.as_table }}
                 <div class="form-field col-lg-12">
-                    <input class="btn-warning btn" type="submit" value="Enviar">
+                    <input class="btn-warning btn" type="submit" value="Modificar">
                 </div>
             </form>
             <div class="alert alert-succes " role="alert">{{mensaje}} </div>
