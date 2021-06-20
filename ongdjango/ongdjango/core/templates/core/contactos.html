@@ -91,7 +91,13 @@
 
         );
 
+        $(document).ready(function () {
+            $('#btn-limpiar').on('click', function () {
+                $("#form").load('contactos #form');
+                return false;
+            });
 
+        });
     </script>
     <title>Contacto</title>
 
@@ -151,7 +157,7 @@
                     </div>
                     <div class=" pb-4">
                         <input type="text" name="telefono" class="form-control" id="inputPhone4"
-                            placeholder="Numero celular">
+                            placeholder="Numero celular (Opcional)">
                     </div>
                     <div class=" pb-4">
                         <input type="text" name="ciudad" class="form-control" id="inputCity4" placeholder="Ciudad"
@@ -170,23 +176,24 @@
                                 value="option2">
                             <label class="form-check-label" for="pasaportecheck">Pasaporte</label>
                         </div>
-                        <input type="text" id="rut" class="form-control" name="rut" required>
+                        <input type="text" id="rut" class="form-control" placeholder="Identificador" name="rut"
+                            required>
                     </div>
 
 
                     <div class="mb-3 ">
-                        <label for="inputComentario4" class="form-label">Comentario</label>
-                        <textarea class="form-control" name="comentario" id="inputComentario4" rows="3"
-                            required></textarea>
+
+                        <textarea placeholder="Comentario" class="form-control" name="comentario" id="inputComentario4"
+                            rows="3" required></textarea>
                     </div>
                     <div class="row">
-                        <div class="col-8 ">
+                        <div class="col-6 ">
                             <input type="hidden" id="url" name="url" value="google.cl" /><br />
-                            <button type="submit" class="btn btn-primary " id="sendbtn" value="Enviar"> Enviar
+                            <button type="submit" class="btn btn-warning d-inline p-3 " id="sendbtn" value="Enviar">
+                                Enviar
                             </button>
-                        </div>
-                        <div class="col-4 pt-4">
-                            <button type="reset" class="btn btn-primary">Limpiar</button>
+                            <button type="reset" id="btn-limpiar" class="btn btn-warning d-inline p-3">Limpiar</button>
+
                         </div>
                     </div>
                 </form>

@@ -17,7 +17,7 @@ import os.path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+
 
 
 
@@ -139,14 +139,13 @@ STATIC_ROOT = ''
 
 STATIC_URL = '/static/'
 
+MEDIA_URL = '/images/'
+
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
+    os.path.join(BASE_DIR, 'static'),
 )
-# STATICFILES_DIRS = (
-#     os.path.join(CURRENT_PATH, 'static'),
-# )
 
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

@@ -82,3 +82,14 @@ img:hover{
     width:200px;
     cursor: pointer;
 }
+.img-round{
+    width: 100px;
+    height: 100px;
+    background-color: #064497;
+    border-radius: 100%;
+}
+.img-round>.circulo  {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}

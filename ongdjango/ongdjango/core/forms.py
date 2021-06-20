@@ -6,4 +6,4 @@ class AnimalForm(ModelForm):
 
     class Meta:
         model = Animal
-        fields = ['numChip','nombreAnimal','edadAnimal','generoAnimal','esterilizacion','especie']
+        fields = ['numChip','nombreAnimal','edadAnimal','generoAnimal','esterilizacion','imagenAnimal','especie']
