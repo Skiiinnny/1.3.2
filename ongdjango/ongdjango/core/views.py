@@ -18,16 +18,16 @@ def animales(request):
 
 
 def form_animal(request):
-    datos= {
+    datos = {
         'form': AnimalForm()
     }
     if request.method == 'POST':
         formulario = AnimalForm(request.POST)
         if formulario.is_valid:
             formulario.save()
-            datos ['mensaje'] ="Datos guardados de manera correcta"
+            datos['mensaje'] = "Datos guardados de manera correcta"
         else:
-            datos['mensaje']="Error"
+            datos['mensaje'] = "Error"
     return render(request, 'core/form_animal.html', datos)
 
 
@@ -53,12 +53,22 @@ def perros(request):
         'animal': animal
     }
     return render(request, 'core/perros.html', datos)
+
+
 def plantilapersonal(request):
     return render(request, 'core/plantillaperosnal.html')
+
 
 def form_mod_animal(request, id):
     animal = Animal.objects.get(numChip=id)
     datos = {
-        'form' : AnimalForm(instance=animal)
+        'form': AnimalForm(instance=animal)
     }
-    return render (request, 'core/form_mod_animal.html', datos)
+    if request.method == 'POST':
+        formulario = AnimalForm(data=request.POST, instance=animal)
+        if formulario.is_valid:
+            formulario.save()
+            datos['mensaje'] = "Datos modificados de manera correcta"
+        else:
+            datos['mensaje'] = "Error"
+    return render(request, 'core/form_mod_animal.html', datos)
