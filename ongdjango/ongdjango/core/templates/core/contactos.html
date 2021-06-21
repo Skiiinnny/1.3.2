@@ -57,7 +57,7 @@
                                     nombre: { required: true },
                                     correo: { required: true },
                                     ciudad: { required: true },
-                                    comentario: { required: true },
+                                    comentario: { required: true , minlength:50},
                                     rut: { required: true, rut: true }
 
                                 },
@@ -72,7 +72,8 @@
                                         required: 'Ingrese la ciudad'
                                     },
                                     comentario: {
-                                        required: 'Ingrese su comentario'
+                                        required: 'Ingrese su comentario',
+                                        minlength: 'Caracteres no superan el minimo'
                                     },
                                     rut: {
                                         required: 'Ingrese rut o numero de pasaporte valido',
@@ -87,6 +88,14 @@
 
                     }
                 );
+                $("#comentario").on('keyup', function (event) {
+                    var init = $(this).val().length;
+
+                    var caracteres = $("#comentario").val().replace(/(<([^>]+)>)/ig, "").length;
+
+                    $("#caracteres").text("Caracteres: " + caracteres);
+
+                });
             }
 
         );
@@ -98,6 +107,7 @@
             });
 
         });
+        
     </script>
     <title>Contacto</title>
 
@@ -183,8 +193,11 @@
 
                     <div class="mb-3 ">
 
-                        <textarea placeholder="Comentario" class="form-control" name="comentario" id="inputComentario4"
+                        <textarea placeholder="Comentario" class="form-control" name="comentario" id="comentario"
                             rows="3" required></textarea>
+                        <div class="col-6">
+                            <label id="caracteres"></label>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-6 ">

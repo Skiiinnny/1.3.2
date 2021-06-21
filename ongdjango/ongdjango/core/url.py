@@ -5,7 +5,7 @@ from .views import animales, form_animal, contactos, gatos, index, nosotros, per
 
 
 urlpatterns = [
-    path('animales', animales, name="animales"),
+    path('animales/<id>', animales, name="animales"),
     path('form_animal', form_animal, name="form_animal"),
     path('contactos', contactos, name="contactos" ),
     path('gatos', gatos, name="gatos"),

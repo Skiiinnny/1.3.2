@@ -9,8 +9,8 @@ def index(request):
     return render(request, 'core/index.html')
 
 
-def animales(request):
-    animal = Animal.objects.all()
+def animales(request, id):
+    animal = Animal.objects.all().filter(numChip=id)
     datos = {
         'animal': animal
     }

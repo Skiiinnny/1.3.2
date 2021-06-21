@@ -79,7 +79,7 @@
                         <td scope="col"> {{an.esterilizacion}}</td>
                         <td scope="col"> {{an.numChip}}</td>
                         <td scope="col"> {{an.especie}}</td>
-                        <td scope="col"><a href="{% url 'animales'%}"><button type="button"
+                        <td scope="col"><a href="{% url 'animales' an.numChip %}"><button type="button"
                                     class="btn btn-warning">Ficha</button></a>
                             <a href="{% url 'form_mod_animal' an.numChip%}"><button type="button"
                                     class="btn btn-warning">Modificar</button></a>
