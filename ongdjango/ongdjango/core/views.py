@@ -1,6 +1,7 @@
 from .forms import AnimalForm
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Animal
+
 
 # Create your views here.
 
@@ -72,3 +73,15 @@ def form_mod_animal(request, id):
         else:
             datos['mensaje'] = "Error"
     return render(request, 'core/form_mod_animal.html', datos)
+
+
+def form_del_perros(request, id):
+    animal = Animal.objects.get(numChip=id)
+    animal.delete()
+    return redirect(to="perros")
+
+
+def form_del_gatos(request, id):
+    animal = Animal.objects.get(numChip=id)
+    animal.delete()
+    return redirect(to="gatos")
