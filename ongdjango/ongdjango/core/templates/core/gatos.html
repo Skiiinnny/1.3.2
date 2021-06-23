@@ -54,7 +54,12 @@
             <table class="table table-dark table-striped table-hover table-bordered ">
                 <thead>
                     <tr>
-                        <td scope="col"></td>
+                        <td scope="col">
+                            {% if an.imagenAnimal %}
+                            <img class="img-round" src="{{an.imagenAnimal.url}}" alt="">
+                            
+                            {% endif %}
+                        </td>
                         <td scope="col">Nombre</td>
                         <td scope="col">Edad</td>
                         <td scope="col">Genero</td>

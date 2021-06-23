@@ -25,19 +25,16 @@ def form_animal(request):
         'form': AnimalForm()
     }
     if request.method == 'POST':
-        archivos_subidos = request.FILES['imagenAnimal']
-        formulario = AnimalForm(request.POST)
-        fs = FileSystemStorage()
+        formulario = AnimalForm(request.POST, request.FILES)
         if formulario.is_valid:
             formulario.save()
-            fs.save(archivos_subidos.name, archivos_subidos)
             datos['mensaje'] = "Datos guardados de manera correcta"
-            print(archivos_subidos.name)
-            print(archivos_subidos.size)
-
         else:
+            formulario = AnimalForm()
             datos['mensaje'] = "Error"
-    return render(request, 'core/form_animal.html', datos)
+        
+    return render(request, 'core/form_animal.html', datos)  
+    
 
 
 def contactos(request):
@@ -74,7 +71,7 @@ def form_mod_animal(request, id):
         'form': AnimalForm(instance=animal)
     }
     if request.method == 'POST':
-        formulario = AnimalForm(data=request.POST, instance=animal)
+        formulario = AnimalForm(request.POST, request.FILES, instance=animal )
         if formulario.is_valid:
             formulario.save()
             datos['mensaje'] = "Datos modificados de manera correcta"
