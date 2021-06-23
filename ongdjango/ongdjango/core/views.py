@@ -2,6 +2,8 @@ from .forms import AnimalForm
 from django.shortcuts import render, redirect
 from .models import Animal
 
+from django.core.files.storage import FileSystemStorage
+
 
 # Create your views here.
 
@@ -23,10 +25,16 @@ def form_animal(request):
         'form': AnimalForm()
     }
     if request.method == 'POST':
+        archivos_subidos = request.FILES['imagenAnimal']
         formulario = AnimalForm(request.POST)
+        fs = FileSystemStorage()
         if formulario.is_valid:
             formulario.save()
+            fs.save(archivos_subidos.name, archivos_subidos)
             datos['mensaje'] = "Datos guardados de manera correcta"
+            print(archivos_subidos.name)
+            print(archivos_subidos.size)
+
         else:
             datos['mensaje'] = "Error"
     return render(request, 'core/form_animal.html', datos)
