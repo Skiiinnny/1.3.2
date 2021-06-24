@@ -62,6 +62,8 @@ def perros(request):
 
 
 def plantilapersonal(request):
+
+    
     return render(request, 'core/plantillaperosnal.html')
 
 

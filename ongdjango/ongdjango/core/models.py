@@ -14,7 +14,7 @@ class Animal(models.Model):
     edadAnimal = models.CharField(max_length=50, blank=True, verbose_name='Edad animal')
     generoAnimal = models.CharField(max_length=50, verbose_name='Genero animal')
     esterilizacion = models.BooleanField(verbose_name='Esterilizacion')
-    imagenAnimal = models.ImageField(upload_to ="Animal", null=True, blank=True, verbose_name="Imagen")
+    imagenAnimal = models.ImageField(null=True, blank=True, verbose_name="Imagen")
     especie =models.ForeignKey(Especie, on_delete=models.CASCADE)
     
     def __str__(self):

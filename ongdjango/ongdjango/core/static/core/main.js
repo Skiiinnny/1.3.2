@@ -22,6 +22,7 @@ function showPosition(position) {
 
 }
 
+
 jQuery(document).ready(function () {
     // getLocation();
 
@@ -29,83 +30,12 @@ jQuery(document).ready(function () {
         getLocation();
     });
 });
+$(document).ready(function () {
+    $('#btn-limpiar').click( function () {
+        $('#form').load('core/contactos.html #form');
+        return false;
+    });
 
-
-
-// function checkRut(rut) {
-//                     rut = String(rut);
-//                     var valor = rut.replace(".", "").replace(".", "");
-//                     valor = valor.replace("-", "");
-//                     cuerpo = valor.slice(0, -1);
-//                     dv = valor.slice(-1).toUpperCase();
-//                     rut = cuerpo + "-" + dv;
-//                     if (cuerpo.length < 7) {
-//                         return false;
-//                     }
-//                     suma = 0;
-//                     multiplo = 2;
-//                     for (i = 1; i <= cuerpo.length; i++) {
-//                         index = multiplo * valor.charAt(cuerpo.length - i);
-//                         suma = suma + index;
-//                         if (multiplo < 7) {
-//                             multiplo = multiplo + 1;
-//                         } else {
-//                             multiplo = 2;
-//                         }
-//                     }
-//                     dvEsperado = 11 - suma % 11;
-//                     dv = dv == "K" ? 10 : dv;
-//                     dv = dv == 0 ? 11 : dv;
-//                     if (dvEsperado != dv) {
-//                         return false;
-//                     }
-//                     return true;
-//                 }
-//         $(
-//             function () {
-//                 $.validator.addMethod("rut", function(value, element){
-//                     return checkRut(value);
-//                 });
-//                 $("#sendbtn").on("click",
-//                     function () {
-//                         $("#form").validate(
-//                             {
-//                                 rules: {
-//                                     nombre: { required: true },
-//                                     correo: { required: true },
-//                                     ciudad: { required: true },
-//                                     comentario: { required: true },
-//                                     rut: { required: true, rut: true}
-
-//                                 },
-//                                 messages: {
-//                                     nombre: {
-//                                         required: 'Ingrese el nombre'
-//                                     },
-//                                     correo: {
-//                                         required: 'Ingrese un correo valido'
-//                                     },
-//                                     ciudad: {
-//                                         required: 'Ingrese la ciudad'
-//                                     },
-//                                     comentario: {
-//                                         required: 'Ingrese su comentario'
-//                                     },
-//                                     rut: {
-//                                         required: 'Ingrese rut o numero de pasaporte valido',
-//                                         rut: 'Rut no validado'
-//                                     }
-
-//                                 }
-//                             }
-
-
-//                         );
-
-//                     }
-//                 );
-//             }
-
-//         );
+});
 
 

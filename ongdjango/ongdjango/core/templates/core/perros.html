@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -57,11 +58,6 @@
                     <tr>
                         <td scope="col"></td>
                         <td scope="col">Nombre</td>
-                        <td scope="col">Edad</td>
-                        <td scope="col">Genero</td>
-                        <td scope="col">Esterilizado</td>
-                        <td scope="col">Numero de chip</td>
-                        <td scope="col">Especie</td>
                         <td scope="col">Opciones</td>
 
 
@@ -70,33 +66,17 @@
                 <tbody>
                     {% for an in animal %}
                     <tr>
-                        <td scope="col">
+                        <td  scope="col ">
                             {% if an.imagenAnimal %}
+                            
                             <img class="img-round" src="{{an.imagenAnimal.url}}" alt="">
                             
                             {% endif %}
                         </td>
                         <td scope="col"> {{an.nombreAnimal}}</td>
-                        <td scope="col"> {{an.edadAnimal}}</td>
-                        <td scope="col"> {{an.generoAnimal}}</td>
-                        <td scope="col"> {{an.esterilizacion}}</td>
-                        <td scope="col"> {{an.numChip}}</td>
-                        <td scope="col"> {{an.especie}}</td>
                         <td scope="col"><a href="{% url 'animales' an.numChip %}"><button type="button"
                                     class="btn btn-warning">Ficha</button></a>
-                            <a href="{% url 'form_mod_animal' an.numChip%}"><button type="button"
-                                    class="btn btn-warning">Modificar</button></a>
-                            <a href="{% url 'form_del_perros' an.numChip%}">
-                                <button type="button" class="btn btn-warning"> <svg xmlns="http://www.w3.org/2000/svg"
-                                        width="16" height="16" fill="currentColor" class="bi bi-trash"
-                                        viewBox="0 0 16 16">
-                                        <path
-                                            d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
-                                        <path fill-rule="evenodd"
-                                            d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
-                                    </svg>
-                                </button>
-                            </a>
+                            
                         </td>
                     </tr>
 
@@ -108,20 +88,7 @@
 
 
 
-        <div class="row bg-dark px-4">
-            <div class="col ">
-                <h2 class="text-center">Lorem ipsum dolor sit.</h2>
-                <p class="text-center fst-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-                    quam sint eveniet nam optio,
-                    impedit perferendis libero commodi consequatur ut illum, officiis voluptas mollitia cupiditate
-                    doloribus voluptate dolorem possimus dolores, amet autem sapiente. Consequuntur possimus, eaque
-                    corrupti aut temporibus, dignissimos aliquam et laboriosam laudantium aperiam, quisquam beatae vero.
-                    Explicabo nesciunt fuga vero ex nihil harum optio vitae, iste quia consequuntur sunt eaque neque
-                    fugiat tempore facilis nisi qui excepturi vel magni necessitatibus nostrum unde cupiditate nemo ut!
-                    Minus, explicabo aliquam reprehenderit quos magni, ipsam ipsa id fuga officiis dolorum distinctio
-                    dolores sequi atque tempora, eligendi beatae! Ipsa quaerat eligendi iure!</p>
-            </div>
-        </div>
+        
 
         <footer class="footer ">
             <div class="row bg-dark d-flex pb-3">

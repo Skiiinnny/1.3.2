@@ -12,10 +12,10 @@ body{
 
     text-align: center;
 }
-img:hover{
+.efecto-carousel:hover{
     background-color: gray;
     opacity: 0.5;
-    visibility:visible;
+    
 }
 .nav-link:hover{
     background-color:#303841;
