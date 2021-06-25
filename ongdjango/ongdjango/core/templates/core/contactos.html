@@ -55,19 +55,24 @@
                             {
                                 rules: {
                                     nombre: { required: true },
-                                    correo: { required: true },
+                                    correo: {
+                                        required: true,
+                                        email: true
+                                    },
                                     ciudad: { required: true },
-                                    comentario: { required: true , minlength:50},
+                                    comentario: { required: true, minlength: 50 },
                                     rut: { required: true, rut: true }
 
                                 },
                                 messages: {
+                                    correo: {
+                                        required: 'Correo invalido',
+                                        email : 'Formato incorrecto'
+                                    },
                                     nombre: {
                                         required: 'Ingrese el nombre'
                                     },
-                                    correo: {
-                                        required: 'Ingrese un correo valido'
-                                    },
+
                                     ciudad: {
                                         required: 'Ingrese la ciudad'
                                     },
@@ -79,6 +84,7 @@
                                         required: 'Ingrese rut o numero de pasaporte valido',
                                         rut: 'Rut no validado'
                                     }
+
 
                                 }
                             }
@@ -100,14 +106,6 @@
 
         );
 
-        $(document).ready(function () {
-            $('#btn-limpiar').on('click', function () {
-                $("#form").load('contactos #form');
-                return false;
-            });
-
-        });
-        
     </script>
     <title>Contacto</title>
 
@@ -158,7 +156,7 @@
                 <form action="http://www.colex.cl/duoc/cargaData.php" method="POST" id="form" novalidate>
                     <div class=" pb-4">
 
-                        <input type="email" name="correo" class="form-control" id="correo"
+                        <input type="email" name="correo" class="form-control" id="Correo"
                             placeholder="Correo electronico" required>
                     </div>
                     <div class=" pb-4">
@@ -199,7 +197,7 @@
                             <label id="caracteres"></label>
                         </div>
                     </div>
-                    <div class="row">
+                    
                         <div class="col-6 ">
                             <input type="hidden" id="url" name="url" value="google.cl" /><br />
                             <button type="submit" class="btn btn-warning d-inline p-3 " id="sendbtn" value="Enviar">
@@ -208,7 +206,7 @@
                             <button type="reset" id="btn-limpiar" class="btn btn-warning d-inline p-3">Limpiar</button>
 
                         </div>
-                    </div>
+                    
                 </form>
             </section>
         </div>

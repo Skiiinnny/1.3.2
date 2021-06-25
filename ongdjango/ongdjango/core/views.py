@@ -1,6 +1,9 @@
-from .forms import AnimalForm
-from django.shortcuts import render
+from .forms import AnimalForm, AnimalFormMod
+from django.shortcuts import render, redirect
 from .models import Animal
+
+from django.core.files.storage import FileSystemStorage
+
 
 # Create your views here.
 
@@ -22,13 +25,16 @@ def form_animal(request):
         'form': AnimalForm()
     }
     if request.method == 'POST':
-        formulario = AnimalForm(request.POST)
+        formulario = AnimalForm(request.POST, request.FILES)
         if formulario.is_valid:
             formulario.save()
             datos['mensaje'] = "Datos guardados de manera correcta"
         else:
+            formulario = AnimalForm()
             datos['mensaje'] = "Error"
-    return render(request, 'core/form_animal.html', datos)
+        
+    return render(request, 'core/form_animal.html', datos)  
+    
 
 
 def contactos(request):
@@ -56,19 +62,33 @@ def perros(request):
 
 
 def plantilapersonal(request):
+
+    
     return render(request, 'core/plantillaperosnal.html')
 
 
 def form_mod_animal(request, id):
     animal = Animal.objects.get(numChip=id)
     datos = {
-        'form': AnimalForm(instance=animal)
+        'form': AnimalFormMod(instance=animal)
     }
     if request.method == 'POST':
-        formulario = AnimalForm(data=request.POST, instance=animal)
+        formulario = AnimalFormMod(request.POST, request.FILES, instance=animal )
         if formulario.is_valid:
             formulario.save()
             datos['mensaje'] = "Datos modificados de manera correcta"
         else:
             datos['mensaje'] = "Error"
     return render(request, 'core/form_mod_animal.html', datos)
+
+
+def form_del_perros(request, id):
+    animal = Animal.objects.get(numChip=id)
+    animal.delete()
+    return redirect(to="perros")
+
+
+def form_del_gatos(request, id):
+    animal = Animal.objects.get(numChip=id)
+    animal.delete()
+    return redirect(to="gatos")

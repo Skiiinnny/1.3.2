@@ -51,73 +51,72 @@
             </nav>
         </div>
         <div class="row bg-dark d-flex ">
-        <div id="carouselExampleIndicators" class="carousel slide  " data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
+            <div id="carouselExampleIndicators" class="carousel slide  " data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active  "><a href="{% url 'gatos'%}">
+                            <img src="https://wallpapercave.com/wp/wp4033952.jpg"
+                                class="efecto-carousel d-block w-100 img-fluid" style="height: 40rem;"
+                                alt="First slide">
+                            <div class="carousel-caption d-none d-md-block text">
+                                <h5 class="fs-2">Gatos</h5>
+                                <p class="fs-4">Conócelos!</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="carousel-item"><a href="{% url 'perros'%}">
+                            <img src="https://cdn.wallpapersafari.com/9/93/M1KdAY.jpg"
+                                class="efecto-carousel d-block w-100 img-fluid" style="height:40rem;"
+                                alt="Second slide">
+                            <div class="carousel-caption d-none d-md-block text">
+                                <h5 class="fs-2">Perros</h5>
+                                <p class="fs-4">Conócelos!</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="carousel-item"> <a href="{% url 'contactos'%}">
+                            <img src="https://ecogarantie.eu/wp-content/uploads/2020/01/shutterstock_646123120.jpg"
+                                class=" efecto-carousel d-block w-100 img-fluid" style="height: 40rem;"
+                                alt="Third slide">
+                            <div class="carousel-caption d-none d-md-block text  ">
+                                <h5 class="fs-2 ">Contactos</h5>
+                                <p class="fs-4">Comunícate!</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active  "><a href="{% url 'gatos'%}">
-                        <img src="https://wallpapercave.com/wp/wp4033952.jpg" class="d-block w-100 img-fluid"
-                            style="height: 40rem;" alt="First slide">
-                        <div class="carousel-caption d-none d-md-block text">
-                            <h5 class="fs-2">Gatos</h5>
-                            <p class="fs-4">Conócelos!</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="carousel-item"><a href="{% url 'perros'%}">
-                        <img src="https://cdn.wallpapersafari.com/9/93/M1KdAY.jpg" class="d-block w-100 img-fluid"
-                            style="height:40rem;" alt="Second slide">
-                        <div class="carousel-caption d-none d-md-block text">
-                            <h5 class="fs-2">Perros</h5>
-                            <p class="fs-4">Conócelos!</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="carousel-item"> <a href="{% url 'contactos'%}">
-                        <img src="https://ecogarantie.eu/wp-content/uploads/2020/01/shutterstock_646123120.jpg"
-                            class="d-block w-100 img-fluid" style="height: 40rem;" alt="Third slide">
-                        <div class="carousel-caption d-none d-md-block text  ">
-                            <h5 class="fs-2 ">Contactos</h5>
-                            <p class="fs-4">Comunícate!</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
-    </div>
         <div class="row bg-dark px-4 border-top border-secondary pb-5">
             <h2 class="text-center">ONG - Ayuda a un peludo!</h2>
-            <p class="lh-base ms-2 " style="text-align: justify;">Lorem, ipsum dolor sit amet consectetur adipisicing
-                elit. Nulla placeat
-                blanditiis a! Quasi ex asperiores
-                culpa consequatur in doloremque, fugiat consequuntur pariatur nulla, nobis ullam minus delectus fuga.
-                Saepe cupiditate temporibus quaerat odio ut eius debitis explicabo unde libero non excepturi inventore
-                corporis fuga natus sed illum exercitationem, vero itaque. Totam id placeat, repellat aperiam, eius esse
-                dicta ipsum expedita, nam iusto aspernatur perspiciatis soluta quos earum! Eius cumque iste commodi
-                nihil pariatur provident alias, et possimus perspiciatis eaque esse, ullam ratione culpa optio? Placeat
-                natus molestias, laudantium accusamus ut excepturi, facilis eius aperiam maiores assumenda vel ipsum
-                obcaecati hic.</p>
-                <div class="col d-flex justify-content-center">
-                    <a href="{% url 'nosotros' %}">
+            <p class="lh-base ms-2 " style="text-align: justify;">En Chile tenemos un grave problema de sobrepoblación
+                de animales domésticos (perros y gatos) en las calles, lo que conlleva graves consecuencias como
+                accidentes de tránsito, gastos en salud y ausentismo laboral por mordeduras y enfermedades, basura
+                esparcida en las calles, mala imagen país, entre otros. No existen políticas públicas que atiendan el
+                problema de manera integral y con una visión de largo plazo, por lo que miles de animales sufren hambre,
+                enfermedades, abandono y maltrato.</p>
+            <div class="col d-flex justify-content-center">
+                <a href="{% url 'nosotros' %}">
                     <button class="btn btn-warning">Nuestra Misión</button>
                 </a>
-                </div>
+            </div>
         </div>
 
         <footer class="footer">
