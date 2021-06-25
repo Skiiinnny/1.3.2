@@ -41,6 +41,9 @@
                                 <a class="nav-link active" aria-current="page"
                                     href="{% url 'contactos'  %}">Contactos</a>
                             </li>
+                            <li>
+                                <button class="btn btn-dark" id="btn-admin"></button>
+                            </li>
                             <li id="geo2" class="position-absolute top-50 start-100 translate-middle pe-5">
                                 <button id="btnClima" type="button" class="btn btn-warning mb-2"
                                     onclick="getLocation()">Clima</button>
@@ -67,7 +70,7 @@
                         <td  scope="col ">
                             {% if an.imagenAnimal %}
                             
-                            <img class="img-round" src="{{an.imagenAnimal.url}}" alt="">
+                            <img style="height: 100px; width: 100px; border-radius: 100%; object-fit: cover;" src="{{an.imagenAnimal.url}}" alt="">
                             
                             {% endif %}
                         </td>
@@ -81,6 +84,11 @@
                     {% endfor %}
                 </tbody>
             </table>
+            <div class="pt-2" id="admin-option" style="display: none">
+                <a href="{% url 'form_animal' %}"><button type="button"
+                        class="btn btn-warning">Nuevo Animal</button></a>
+
+            </div>
         </div>
 
       

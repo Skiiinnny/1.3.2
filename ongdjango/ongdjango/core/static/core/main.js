@@ -21,7 +21,14 @@ function showPosition(position) {
         });
 
 }
-
+$(document).ready(function () {
+    $("#buscar").keyup(function () {
+        var value = $(this).val().toLowerCase();
+        $("#contenido tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+});
 
 jQuery(document).ready(function () {
     // getLocation();
@@ -31,11 +38,15 @@ jQuery(document).ready(function () {
     });
 });
 $(document).ready(function () {
-    $('#btn-limpiar').click( function () {
+    $('#btn-limpiar').click(function () {
         $('#form').load('core/contactos.html #form');
         return false;
     });
 
 });
 
-
+$(document).ready(function() {
+    $('#btn-admin').click(function(){
+        $('#admin-option').show(1000);
+    });
+});

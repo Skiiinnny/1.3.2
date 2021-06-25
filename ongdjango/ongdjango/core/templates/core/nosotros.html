@@ -9,8 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
-    <link rel="stylesheet"
-    href="{% static 'core/stylePlantilla.css' %}">
+    <link rel="stylesheet" href="{% static 'core/stylePlantilla.css' %}">
     <title>Nosotros</title>
 </head>
 
@@ -40,7 +39,8 @@
                                 <a class="nav-link active" aria-current="page" href="{% url 'gatos'  %}">Gatos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="{% url 'contactos'  %}">Contactos</a>
+                                <a class="nav-link active" aria-current="page"
+                                    href="{% url 'contactos'  %}">Contactos</a>
                             </li>
                             <li id="geo2" class="position-absolute top-50 start-100 translate-middle pe-5">
                                 <button id="btnClima" type="button" class="btn btn-warning mb-2"
@@ -53,35 +53,34 @@
         </div>
         <div class="row bg-dark px-4">
             <div class="col">
-                <h1 class="text-center"><i> <u><em>ONG - Ayuda a un peludo</em></u></i></h1>
-                <p class="text-center fst-italic">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore
-                    aperiam provident rem magnam hic nulla inventore modi. Expedita quisquam soluta nihil, quam
-                    provident incidunt accusantium debitis ducimus eius ex eligendi quasi nulla dignissimos illum!
-                    Cumque eius nisi quidem consectetur, illo hic. Necessitatibus mollitia asperiores voluptas!
-                    Aspernatur quisquam molestiae fugiat nisi natus incidunt ab eaque doloribus, amet deserunt? Dolores
-                    voluptatum quia ullam repudiandae, ipsam modi aliquam? Impedit sed, incidunt quam nulla consectetur
-                    labore libero nihil possimus at. Necessitatibus nisi vel cupiditate sapiente ullam eum soluta, quod,
-                    quia distinctio nobis alias sit, deserunt aspernatur veritatis in earum architecto quas. Aut, quam
-                    minus?</p>
+                <h1 class="text-center"><i> <u><em>Nuestra misión </em></u></i></h1>
+                
+                <p class="text-center fst-italic">Radica en la necesidad de proteger a animales domésticos en situación de
+                    maltrato o abandono, y busca desarrollar
+                    una cultura de protección activa de la vida animal.</p>
             </div>
         </div>
-        <div class="row bg-dark px-4" >
+        <div class="row bg-dark px-4">
             <div class="col">
-                <h4><i> Nuestros integrantes:</i></h4>
+                <h4 class="text-center"><i> <u> Nuestros integrantes</u></i></h4>
                 <ul>
                     <li class="badge col-12">
-                        <img src="{%static 'core/images/2.jpeg' %}" class="img-fluid rounded" style="height: 15rem; width: 20rem;"
-                            alt="Rodrigo">
+                        <img src="{%static 'core/images/2.jpeg' %}" class="img-fluid rounded"
+                            style="height: 15rem; width: 20rem; object-fit: cover;" alt="Rodrigo">
                         <h4 class="">Rodrigo Diaz <br> Director y socio fundador</h4>
-                        
+
                     </li>
                     <li class=" badge col-12">
-                        <img src="{%static 'core/images/1.jpeg' %}" class="img-fluid rounded" style="height: 15rem; width: 20rem;"
-                            alt="Nataniel">
+                        <img src="{%static 'core/images/1.jpeg' %}" class="img-fluid rounded"
+                            style="height: 15rem; width: 20rem; object-fit: cover;" alt="Nataniel">
                         <h4 class=""> Nataniel Soto <br> Benefactor y socio fundador</h4>
-                        
+
                     </li>
+                    
                 </ul>
+                <p class="text-center fst-italic">Somos personas que se distinguen por creer en algo y trabajar activamente,
+                    sin remuneración, para conseguirlo. Donamos nuestro tiempo, capacidades, conocimientos y
+                    habilidades a una causa que nos preocupa, convirtiéndonos así en un agente de cambio. </p>
             </div>
         </div>
 
@@ -127,9 +126,8 @@
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
         crossorigin="anonymous"></script>
 
-        <script
-        src="{% static 'core/main.js' %}">
-        </script>
+    <script src="{% static 'core/main.js' %}">
+    </script>
 
 
 </body>

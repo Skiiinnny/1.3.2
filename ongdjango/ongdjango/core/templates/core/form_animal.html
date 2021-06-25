@@ -62,8 +62,9 @@
 
                     {{ form|crispy }}
                     <div class="form-field col-lg-12">
-                        <input class="btn-warning btn" type="submit" value="Enviar">
-
+                        <input class="btn-warning btn" type="submit" value="Enviar" data-bs-toggle="popover"
+                            title="{{mensaje}} ">
+                        <button class="btn-warning btn" type="button" onclick="history.go(-1);">Volver</button>
                     </div>
                 </form>
                 <div class="alert" role="alert">{{mensaje}} </div>

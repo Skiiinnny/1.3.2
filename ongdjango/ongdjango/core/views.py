@@ -1,4 +1,4 @@
-from .forms import AnimalForm
+from .forms import AnimalForm, AnimalFormMod
 from django.shortcuts import render, redirect
 from .models import Animal
 
@@ -70,10 +70,10 @@ def plantilapersonal(request):
 def form_mod_animal(request, id):
     animal = Animal.objects.get(numChip=id)
     datos = {
-        'form': AnimalForm(instance=animal)
+        'form': AnimalFormMod(instance=animal)
     }
     if request.method == 'POST':
-        formulario = AnimalForm(request.POST, request.FILES, instance=animal )
+        formulario = AnimalFormMod(request.POST, request.FILES, instance=animal )
         if formulario.is_valid:
             formulario.save()
             datos['mensaje'] = "Datos modificados de manera correcta"
