@@ -41,13 +41,13 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{% url 'contactos'  %}">Contactos</a>
                         </li>
-                        <li >
+                        <li>
                             <button class="btn btn-dark" id="btn-admin"></button>
                         </li>
                         <li id="geo2" class="position-absolute top-50 start-100 translate-middle pe-5">
                             <button id="btnClima" type="button" class="btn btn-warning"
                                 onclick="getLocation()">Clima</button>
-                                
+
                         </li>
                     </ul>
                 </div>
@@ -80,25 +80,43 @@
             <li class="list-group-item list-group-item-dark">Nro Chip : {{an.numChip}}</li>
 
             <li class="list-group-item list-group-item-dark">
-                {% if an.especie|stringformat:"s" == "Gato" %}
-                <a href="{% url 'gatos'%}">
-                    <button class="btn btn-warning" type="button">Volver</button>
-                </a>
-                {% else %}
-                <a href="{% url 'perros'%}">
-                    <button class="btn btn-warning" type="button">Volver</button>
-                </a>
-                {% endif %}
-                <div class="pt-2" id="admin-option" style="display: none">
-                    <a href="{% url 'form_mod_animal' an.numChip%}"><button type="button"
-                            class="btn btn-warning">Modificar</button></a>
-                    <a href="{% url 'form_del_perros' an.numChip%}">
-                        <button type="button" class="btn btn-warning">
+                <div class="row align-items-start mx-0 ">
+                    <div class="col-1 px-0">
+                        {% if an.especie|stringformat:"s" == "Gato" %}
+                        <a href="{% url 'gatos'%}">
+                            <button class="btn btn-warning" type="button">Volver</button>
+                        </a>
+
+                        {% else %}
+                        <a href="{% url 'perros'%}">
+                            <button class="btn btn-warning" type="button">Volver</button>
+                        </a>
+
+                        {% endif %}
+                    </div>
+                    <div class="col-3 px-0" id="admin-option" style="display: none">
+                        <a href="{% url 'form_mod_animal' an.numChip%}"><button type="button"
+                                class="btn btn-warning">Modificar</button></a>
+                        <button type="button" class="btn btn-warning" id="delete-btn">
                             Borrar
                         </button>
-                    </a>
+                    </div>
+                    <div class="col-8 px-0" style="display: none;" id="delete-conf">
+                        ¿Seguro que desea borrar este registro?
+                        {% if an.especie|stringformat:"s" == "Gato" %}
+                        <a href="{% url 'form_del_gatos' an.numChip%}" style="text-decoration: none;">
+                            <button type="button" class="btn btn-warning">
+                                Si
+                            </button>
+                        </a>
+                        {% else %}
+                        <a href="{% url 'form_del_perros' an.numChip%}" style="text-decoration: none;">
+                            <button class="btn btn-warning">Si</button>
+                        </a>
+                        {% endif %}
+                        <button class="btn btn-dark">no</button>
+                    </div>
                 </div>
-
             </li>
 
 

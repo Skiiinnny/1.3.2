@@ -63,11 +63,17 @@
                     {{ form|crispy }}
 
                     <div class="form-field col-lg-12">
-                        <button class="btn-warning btn"  type="button"  onclick="history.go(-1);">Volver</button>
+                        {% if mensaje == "Datos modificados de manera correcta"%}
+                        <button class="btn-warning btn" type="button" onclick="history.go(-2);">Volver</button>
+                        {% else %}
+                        <button class="btn-warning btn" type="button" onclick="history.go(-1);">Volver</button>
+                        {% endif %}
                         <input class="btn-warning btn" type="submit" value="Modificar">
                     </div>
                 </form>
-                <div class="alert alert-succes " role="alert">{{mensaje}} </div>
+                {% if mensaje == "Datos modificados de manera correcta"%}
+                <div class="alert alert-dark" role="alert" style="transition: 1000;">{{mensaje}} </div>
+                {% endif %}
             </section>
         </div>
 

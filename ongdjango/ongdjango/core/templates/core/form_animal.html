@@ -67,7 +67,9 @@
                         <button class="btn-warning btn" type="button" onclick="history.go(-1);">Volver</button>
                     </div>
                 </form>
-                <div class="alert" role="alert">{{mensaje}} </div>
+                {% if mensaje == "Datos guardados de manera correcta"%}
+                <div class="alert alert-dark" role="alert" style="transition: 1000;">{{mensaje}} </div>
+                {% endif %}
             </section>
         </div>
 
