@@ -56,3 +56,4 @@ $(document).ready(function() {
         $('#delete-conf').show(1000);
     });
 });
+
