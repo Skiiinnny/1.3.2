@@ -50,3 +50,10 @@ $(document).ready(function() {
         $('#admin-option').show(1000);
     });
 });
+
+$(document).ready(function() {
+    $('#delete-btn').click(function(){
+        $('#delete-conf').show(1000);
+    });
+});
+
