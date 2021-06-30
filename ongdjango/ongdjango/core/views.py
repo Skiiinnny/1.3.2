@@ -21,8 +21,10 @@ def animales(request, id):
 
 
 def form_animal(request):
+    animal = Animal.objects.all()
     datos = {
-        'form': AnimalForm()
+        'form': AnimalForm(),
+        'an': animal
     }
     if request.method == 'POST':
         formulario = AnimalForm(request.POST, request.FILES)
@@ -70,7 +72,8 @@ def plantilapersonal(request):
 def form_mod_animal(request, id):
     animal = Animal.objects.get(numChip=id)
     datos = {
-        'form': AnimalFormMod(instance=animal)
+        'form': AnimalFormMod(instance=animal),
+        'an': animal
     }
     if request.method == 'POST':
         formulario = AnimalFormMod(request.POST, request.FILES, instance=animal )

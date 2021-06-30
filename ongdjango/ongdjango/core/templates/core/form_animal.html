@@ -21,7 +21,7 @@
         <div class="row bg-dark d-flex sticky-top ">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark  border-bottom border-secondary  ">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Ayuda a un peludo!</a>
+                    <a class="navbar-brand">Ayuda a un peludo!</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -61,10 +61,14 @@
                     {% csrf_token %}
 
                     {{ form|crispy }}
-                    <div class="form-field col-lg-12">
+                    <div class="mt-3 col-lg-3">
                         <input class="btn-warning btn" type="submit" value="Enviar" data-bs-toggle="popover"
                             title="{{mensaje}} ">
-                        <button class="btn-warning btn" type="button" onclick="history.go(-1);">Volver</button>
+                    </div>
+                    <div class="mt-3 col-lg-3">
+                        <a href="{% url 'index' %}">
+                            <input class="btn-warning btn" type="button" value="Volver">
+                        </a>
                     </div>
                 </form>
                 {% if mensaje == "Datos guardados de manera correcta"%}
