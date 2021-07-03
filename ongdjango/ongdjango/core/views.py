@@ -95,3 +95,8 @@ def form_del_gatos(request, id):
     animal = Animal.objects.get(numChip=id)
     animal.delete()
     return redirect(to="gatos")
+
+
+
+def pruebaPlantilla (request):
+    return render(request, 'core/pruebaPlantilla.html')
