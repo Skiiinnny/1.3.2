@@ -9,8 +9,8 @@
         <form action="http://www.colex.cl/duoc/cargaData.php" method="POST" id="form" novalidate>
             <div class=" pb-4">
 
-                <input type="email" name="correo" class="form-control" id="Correo"
-                    placeholder="Correo electronico" required>
+                <input type="email" name="correo" class="form-control" id="Correo" placeholder="Correo electronico"
+                    required>
             </div>
             <div class=" pb-4">
 
@@ -21,8 +21,7 @@
                     placeholder="Numero celular (Opcional)">
             </div>
             <div class=" pb-4">
-                <input type="text" name="ciudad" class="form-control" id="inputCity4" placeholder="Ciudad"
-                    required>
+                <input type="text" name="ciudad" class="form-control" id="inputCity4" placeholder="Ciudad" required>
             </div>
 
 
@@ -37,29 +36,32 @@
                         value="option2">
                     <label class="form-check-label" for="pasaportecheck">Pasaporte</label>
                 </div>
-                <input type="text" id="rut" class="form-control" placeholder="Identificador" name="rut"
-                    required>
+                <input type="text" id="rut" class="form-control" placeholder="Identificador" name="rut" required>
             </div>
 
 
             <div class="mb-3 ">
 
-                <textarea placeholder="Comentario" class="form-control" name="comentario" id="comentario"
-                    rows="3" required></textarea>
+                <textarea placeholder="Comentario" class="form-control" name="comentario" id="comentario" rows="3"
+                    required></textarea>
                 <div class="col-6">
                     <label id="caracteres"></label>
                 </div>
             </div>
-            
-                <div class="col-6 ">
+
+            <div class="row m-0">
+                <div class="col-1 me-2">
                     <input type="hidden" id="url" name="url" value="google.cl" /><br />
-                    <button type="submit" class="btn btn-warning d-inline p-3 " id="sendbtn" value="Enviar">
+                    <button type="submit" class="btn btn-warning  " id="sendbtn" value="Enviar">
                         Enviar
                     </button>
-                    <button type="reset" id="btn-limpiar" class="btn btn-warning d-inline p-3">Limpiar</button>
-
                 </div>
-            
+                <div class="col-1 ms-2"><br />
+                    <button type="reset" id="btn-limpiar" class="btn btn-warning ">Limpiar</button>
+                </div>
+
+            </div>
+
         </form>
     </section>
 </div>

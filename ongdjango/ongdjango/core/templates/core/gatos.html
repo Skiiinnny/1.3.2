@@ -1,11 +1,13 @@
 {% extends "core/plantilla.html" %}
 
+
 {% block title %}Gatos{% endblock %}
 
 {% block content %}
 
 <div class="row bg-dark pt-2 px-3">
     <input id="buscar" type="text" placeholder="Buscar" style="width: 500px;">
+    <div class="col"> <button class="btn btn-dark" id="btn-admin"></button></div>
 </div>
 <div class="row mt-0 bg-dark px-2 pt-2">
     <table class="table table-dark table-striped table-hover table-bordered ">
@@ -21,17 +23,18 @@
         <tbody>
             {% for an in animal %}
             <tr>
-                <td  scope="col ">
+                <td scope="col ">
                     {% if an.imagenAnimal %}
-                    
-                    <img style="height: 100px; width: 100px; border-radius: 100%; object-fit: cover;" src="{{an.imagenAnimal.url}}" alt="">
-                    
+
+                    <img style="height: 100px; width: 100px; border-radius: 100%; object-fit: cover;"
+                        src="{{an.imagenAnimal.url}}" alt="">
+
                     {% endif %}
                 </td>
                 <td scope="col"> {{an.nombreAnimal}}</td>
                 <td scope="col"><a href="{% url 'animales' an.numChip %}"><button type="button"
                             class="btn btn-warning">Ficha</button></a>
-                    
+
                 </td>
             </tr>
 
@@ -39,8 +42,7 @@
         </tbody>
     </table>
     <div class="pt-2" id="admin-option" style="display: none">
-        <a href="{% url 'form_animal' %}"><button type="button"
-                class="btn btn-warning">Nuevo Animal</button></a>
+        <a href="{% url 'form_animal' %}"><button type="button" class="btn btn-warning">Nuevo Animal</button></a>
 
     </div>
 </div>
